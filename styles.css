@@ -201,3 +201,6 @@ h1{margin:14px 0 6px;font-size:42px}
     background-position: 65% 30%;
   }
 }
+@media (max-width: 600px){
+  .hero{ outline: 6px solid lime !important; }
+}

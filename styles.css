@@ -122,29 +122,31 @@ h1{margin:14px 0 6px;font-size:42px}
 }
 
 /* Header photo backdrop */
-.hero--photo{
-  position: relative;
-  background: url("elamigo_backdrop_1920px_q80.webp") center / cover no-repeat;
-}
-
-/* Dark overlay so text stays readable */
-.hero--photo::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(900px 500px at 20% 20%, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.78) 60%),
-    linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.85));
-}
-
-/* Keep content above overlay */
-.hero-inner{
-  position: relative;
-  z-index: 1;
-  padding:34px 20px 22px; /* matches your old hero padding */
-}
-
-/* IMPORTANT: remove hero padding from the full-width header */
 .hero{
-  padding:0;
+  position: relative;
+  /* keep your existing padding/border if you want */
+  background:
+    linear-gradient(
+      180deg,
+      rgba(11,11,15,0.78) 0%,
+      rgba(11,11,15,0.55) 45%,
+      rgba(11,11,15,0.92) 100%
+    ),
+    url("elamigo_backdrop_1920px_q80.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 75% 35%; /* pushes the sign away from your headline */
+}
+
+/* Extra readability without changing layout */
+.hero h1,
+.hero .sub{
+  text-shadow: 0 2px 18px rgba(0,0,0,0.55);
+}
+
+/* On small screens, adjust crop slightly */
+@media (max-width: 560px){
+  .hero{
+    background-position: 65% 30%;
+  }
 }

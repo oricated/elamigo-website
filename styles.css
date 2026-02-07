@@ -114,3 +114,13 @@ h1{margin:14px 0 6px;font-size:42px}
   .grid{grid-template-columns:1fr 1fr}
   h1{font-size:56px}
 }
+.hoursline{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  padding:10px 0;
+  border-bottom:1px dashed rgba(255,255,255,0.08);
+  margin:0;
+}
+.hoursline strong{color:var(--text)}
+.hoursline span{color:var(--text)}

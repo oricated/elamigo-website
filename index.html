@@ -3,13 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="El Amigo Authentic Mexican Food. Order online, call, or get directions." />
+  <meta name="description" content="El Amigo Authentic Mexican Food in Valparaiso, IN. Order online, call, or get directions." />
   <title>El Amigo Authentic Mexican Food</title>
 
-  <!-- Canonical (helps SEO + keeps www as the “official” version) -->
+  <!-- Canonical: pick ONE version as “official”.
+       If you are using www as primary, keep this as www. -->
   <link rel="canonical" href="https://www.elamigoauthenticmexicanfood.com/" />
 
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <link rel="stylesheet" href="styles.css?v=4" />
 </head>
 
 <body>
@@ -18,28 +19,24 @@
     <h1>El Amigo</h1>
     <p class="sub">Order online, call, or get directions in one tap.</p>
 
-    <!-- 3 equal buttons, always across -->
     <div class="actions">
-      <!-- GloriaFood button (no href needed) -->
-      <span
+      <!-- GloriaFood button -->
+      <button
         class="btn primary glf-button"
+        type="button"
         data-glf-cuid="766e09b9-b553-416e-bcda-4c77faee2aea"
         data-glf-ruid="3ecc1727-377d-4386-aba2-a2573162387e"
-        role="button"
-        tabindex="0"
       >
         Order Online
-      </span>
+      </button>
 
-    <a class="btn" href="tel:+12195315606">Call</a>
+      <a class="btn" href="tel:+12195315606">Call</a>
 
-
-      <!-- Replace # with your real Google Maps link later -->
-      <a class="btn" href="https://maps.app.goo.gl/qyQTPAGF6ds8DrZo7" target="_blank" rel="noopener">Directions</a>
-
+      <!-- Option C: this href gets overwritten by script.js based on device -->
+      <a class="btn" data-maps-link href="#" target="_blank" rel="noopener">Directions</a>
     </div>
 
-    <p class="micro">Replace the links later. For now we just want it deployed.</p>
+    <p class="micro">Online ordering powered by GloriaFood.</p>
   </header>
 
   <main class="wrap grid">
@@ -54,16 +51,13 @@
         <li><span>Sat</span><span>11:00 AM – 10:00 PM</span></li>
         <li><span>Sun</span><span>12:00 PM – 8:00 PM</span></li>
       </ul>
-      <p class="note">Update hours later. Placeholders are fine for MVP.</p>
+      <p class="note">Hours can be updated anytime.</p>
     </section>
 
     <section class="card">
       <h2>Location</h2>
-     <p class="big">📍 3032 Calumet Ave, Valparaiso, IN 46383</p>
-
-      <p class="note">We’ll swap this with the real address and a Google Maps link.</p>
-      <a class="link" href="https://maps.app.goo.gl/qyQTPAGF6ds8DrZo7" target="_blank" rel="noopener">Open in Maps</a>
-
+      <p class="big">📍 3032 Calumet Ave, Valparaiso, IN 46383</p>
+      <a class="link" data-maps-link href="#" target="_blank" rel="noopener">Open in Maps</a>
     </section>
 
     <section class="card">
@@ -74,16 +68,14 @@
         <li>Quesadillas</li>
       </ul>
 
-      <!-- Secondary GloriaFood entry -->
-      <a
+      <button
         class="btn primary glf-button btn-wide"
+        type="button"
         data-glf-cuid="766e09b9-b553-416e-bcda-4c77faee2aea"
         data-glf-ruid="3ecc1727-377d-4386-aba2-a2573162387e"
-        href="#"
-        role="button"
       >
         See full menu / order →
-      </a>
+      </button>
     </section>
   </main>
 
@@ -91,7 +83,7 @@
     <p>© <span id="y"></span> El Amigo Authentic Mexican Food</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=4"></script>
 
   <!-- GloriaFood embed script -->
   <script src="https://www.fbgcdn.com/embedder/js/ewm2.js" defer async></script>

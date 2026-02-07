@@ -11,7 +11,3 @@ const appleMaps  = `https://maps.apple.com/?daddr=${encoded}`;
 
 const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 const mapsHref = isIOS ? appleMaps : googleMaps;
-
-document.querySelectorAll("[data-maps-link]").forEach((a) => {
-  a.setAttribute("href", mapsHref);
-});

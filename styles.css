@@ -82,15 +82,6 @@ h1{margin:14px 0 6px;font-size:42px}
 .note{color:var(--muted);font-size:13px;margin:10px 0 0}
 .big{font-size:16px;margin:0 0 10px}
 
-.list{list-style:none;padding:0;margin:0;display:grid;gap:8px}
-.list li{
-  display:flex;
-  justify-content:space-between;
-  border-bottom:1px dashed rgba(255,255,255,0.08);
-  padding-bottom:8px;
-}
-.list li span:first-child{color:var(--muted)}
-
 .bullets{margin:0;padding-left:18px}
 .bullets li{margin:8px 0}
 

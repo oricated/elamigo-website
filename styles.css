@@ -65,7 +65,7 @@ h1{margin:14px 0 6px;font-size:42px}
   color:#1a1209;
 }
 
-.btn-wide{width:100%}
+.btn-wide{width:100%; margin-top:12px;}
 
 .micro{color:var(--muted);font-size:13px;margin:10px 0 0}
 
@@ -93,7 +93,12 @@ h1{margin:14px 0 6px;font-size:42px}
   font-weight:650;
 }
 
-.footer{padding:26px 20px 40px;color:var(--muted);border-top:1px solid var(--line);margin-top:18px}
+.footer{
+  padding:26px 20px 40px;
+  color:var(--muted);
+  border-top:1px solid var(--line);
+  margin-top:18px;
+}
 
 /* Wider screens: 3 buttons across, grid cards 2 columns */
 @media (min-width: 560px){
@@ -105,6 +110,7 @@ h1{margin:14px 0 6px;font-size:42px}
   .grid{grid-template-columns:1fr 1fr}
   h1{font-size:56px}
 }
+
 .hoursline{
   display:flex;
   justify-content:space-between;

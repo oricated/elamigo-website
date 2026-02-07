@@ -145,6 +145,56 @@ h1{margin:14px 0 6px;font-size:42px}
   h1{font-size:56px}
 }
 
+/* Mobile hero polish (keeps everything else the same) */
+@media (max-width: 559px){
+
+  .hero{
+    /* slightly tighter so it doesn't feel bulky */
+    padding: 28px 20px 18px;
+
+    /* stronger overlay + controlled crop */
+    background:
+      linear-gradient(
+        180deg,
+        rgba(11,11,15,0.92) 0%,
+        rgba(11,11,15,0.70) 45%,
+        rgba(11,11,15,0.96) 100%
+      ),
+      url("elamigo_backdrop_1920px_q80.webp");
+
+    /* zoom in a bit so the photo reads as “backdrop”, not “poster” */
+    background-size: 160%;
+    background-repeat: no-repeat;
+
+    /* push the sign away from the text */
+    background-position: 92% 28%;
+  }
+
+  /* give the text its own readable stage */
+  .badge,
+  .hero h1,
+  .hero .sub{
+    display: inline-block;
+    background: rgba(11,11,15,0.55);
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 14px;
+    padding: 6px 10px;
+
+    /* nice when supported, harmless when not */
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+  }
+
+  /* keep your title spacing looking intentional */
+  .hero h1{ margin: 12px 0 6px; }
+  .hero .sub{ margin: 0 0 14px; max-width: 34ch; }
+
+  /* buttons pop a bit more over the photo */
+  .btn{
+    background: rgba(255,255,255,0.07);
+  }
+}
+
 /* On small screens, adjust crop slightly */
 @media (max-width: 559px){
   .hero{

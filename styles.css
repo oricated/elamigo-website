@@ -19,7 +19,6 @@ body{
 }
 
 .wrap{max-width:980px;margin:0 auto;padding:20px}
-.hero{padding:34px 20px 22px;border-bottom:1px solid var(--line)}
 
 .badge{
   display:inline-block;
@@ -124,7 +123,9 @@ h1{margin:14px 0 6px;font-size:42px}
 /* Header photo backdrop */
 .hero{
   position: relative;
-  /* keep your existing padding/border if you want */
+  padding:34px 20px 22px;
+  border-bottom:1px solid var(--line);
+
   background:
     linear-gradient(
       180deg,
@@ -135,18 +136,5 @@ h1{margin:14px 0 6px;font-size:42px}
     url("elamigo_backdrop_1920px_q80.webp");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 75% 35%; /* pushes the sign away from your headline */
-}
-
-/* Extra readability without changing layout */
-.hero h1,
-.hero .sub{
-  text-shadow: 0 2px 18px rgba(0,0,0,0.55);
-}
-
-/* On small screens, adjust crop slightly */
-@media (max-width: 560px){
-  .hero{
-    background-position: 65% 30%;
-  }
+  background-position: 75% 35%;
 }

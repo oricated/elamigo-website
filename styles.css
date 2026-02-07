@@ -151,14 +151,20 @@ h1{margin:14px 0 6px;font-size:42px}
   }
 
   .actions .btn{
-    min-width: 0;     /* allow buttons to shrink nicely */
+    min-width: 0;
     width: 100%;
   }
 
   .actions .btn.primary{
-    grid-column: 1 / -1;  /* make Order Online span full width */
+    grid-column: 1 / -1;
+
+    /* add these lines right here */
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
   }
 }
+
 
 /* Nice touch: make GloriaFood spans feel clickable */
 .glf-button{ cursor: pointer; }

@@ -41,6 +41,18 @@ h1{margin:14px 0 6px;font-size:42px}
   margin:10px 0 8px;
 }
 
+/* 2-up buttons by default */
+.actions .btn{
+  flex: 1 1 calc(50% - 10px);
+  min-width: 0; /* prevents weird squeezing */
+}
+
+/* 3rd button full width */
+.actions .btn.full{
+  flex: 1 1 100%;
+}
+
+
 .btn{
   display:inline-flex;
   align-items:center;

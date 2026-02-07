@@ -19,7 +19,6 @@ body{
 }
 
 .wrap{max-width:980px;margin:0 auto;padding:20px}
-
 .hero{padding:34px 20px 22px;border-bottom:1px solid var(--line)}
 
 .badge{
@@ -65,7 +64,7 @@ h1{margin:14px 0 6px;font-size:42px}
   color:#1a1209;
 }
 
-.btn-wide{width:100%; margin-top:12px;}
+.btn-wide{width:100%}
 
 .micro{color:var(--muted);font-size:13px;margin:10px 0 0}
 
@@ -100,17 +99,6 @@ h1{margin:14px 0 6px;font-size:42px}
   margin-top:18px;
 }
 
-/* Wider screens: 3 buttons across, grid cards 2 columns */
-@media (min-width: 560px){
-  .actions{grid-template-columns:repeat(3, 1fr)}
-  .actions .btn.primary{grid-column:auto}
-}
-
-@media (min-width: 820px){
-  .grid{grid-template-columns:1fr 1fr}
-  h1{font-size:56px}
-}
-
 .hoursline{
   display:flex;
   justify-content:space-between;
@@ -121,3 +109,14 @@ h1{margin:14px 0 6px;font-size:42px}
 }
 .hoursline strong{color:var(--text)}
 .hoursline span{color:var(--text)}
+
+/* Wider screens: 3 buttons across, grid cards 2 columns */
+@media (min-width: 560px){
+  .actions{grid-template-columns:repeat(3, 1fr)}
+  .actions .btn.primary{grid-column:auto}
+}
+
+@media (min-width: 820px){
+  .grid{grid-template-columns:1fr 1fr}
+  h1{font-size:56px}
+}

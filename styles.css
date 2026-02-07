@@ -120,3 +120,31 @@ h1{margin:14px 0 6px;font-size:42px}
   .grid{grid-template-columns:1fr 1fr}
   h1{font-size:56px}
 }
+
+/* Header photo backdrop */
+.hero--photo{
+  position: relative;
+  background: url("elamigo_backdrop_1920px_q80.webp") center / cover no-repeat;
+}
+
+/* Dark overlay so text stays readable */
+.hero--photo::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(900px 500px at 20% 20%, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.78) 60%),
+    linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.85));
+}
+
+/* Keep content above overlay */
+.hero-inner{
+  position: relative;
+  z-index: 1;
+  padding:34px 20px 22px; /* matches your old hero padding */
+}
+
+/* IMPORTANT: remove hero padding from the full-width header */
+.hero{
+  padding:0;
+}

@@ -20,7 +20,7 @@ body{
 
 .wrap{max-width:980px;margin:0 auto;padding:20px}
 
-/* Header photo backdrop (merged with your original hero padding/border) */
+/* HERO (header-only backdrop) */
 .hero{
   position: relative;
   padding:34px 20px 22px;
@@ -29,8 +29,8 @@ body{
   background:
     linear-gradient(
       180deg,
-      rgba(11,11,15,0.78) 0%,
-      rgba(11,11,15,0.55) 45%,
+      rgba(11,11,15,0.82) 0%,
+      rgba(11,11,15,0.58) 45%,
       rgba(11,11,15,0.92) 100%
     ),
     url("elamigo_backdrop_1920px_q80.webp");
@@ -51,20 +51,19 @@ body{
 h1{margin:14px 0 6px;font-size:42px}
 .sub{margin:0 0 18px;color:var(--muted)}
 
-/* Extra readability without changing layout */
 .hero h1,
 .hero .sub{
   text-shadow: 0 2px 18px rgba(0,0,0,0.55);
 }
 
-/* Buttons: mobile-friendly layout, no truncation */
+/* Buttons */
 .actions{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:10px;
   margin:10px 0 8px;
 }
-.actions .btn.primary{grid-column:1 / -1;} /* Order Online spans full width on mobile */
+.actions .btn.primary{grid-column:1 / -1;}
 
 .btn{
   display:inline-flex;
@@ -89,8 +88,6 @@ h1{margin:14px 0 6px;font-size:42px}
 }
 
 .btn-wide{width:100%}
-
-.micro{color:var(--muted);font-size:13px;margin:10px 0 0}
 
 .grid{display:grid;grid-template-columns:1fr;gap:14px;padding-top:18px}
 
@@ -134,7 +131,7 @@ h1{margin:14px 0 6px;font-size:42px}
 .hoursline strong{color:var(--text)}
 .hoursline span{color:var(--text)}
 
-/* Wider screens: 3 buttons across, grid cards 2 columns */
+/* Wider screens */
 @media (min-width: 560px){
   .actions{grid-template-columns:repeat(3, 1fr)}
   .actions .btn.primary{grid-column:auto}
@@ -145,80 +142,42 @@ h1{margin:14px 0 6px;font-size:42px}
   h1{font-size:56px}
 }
 
-/* Mobile hero polish (keeps everything else the same) */
-@media (max-width: 559px){
-
+/* MOBILE: one clean rule so it doesn't fight itself */
+@media (max-width: 600px){
   .hero{
-    /* slightly tighter so it doesn't feel bulky */
-    padding: 28px 20px 18px;
+    padding: 26px 20px 16px;
 
-    /* stronger overlay + controlled crop */
+    /* zoom in so it feels like a backdrop, not a poster */
     background:
       linear-gradient(
         180deg,
-        rgba(11,11,15,0.92) 0%,
-        rgba(11,11,15,0.70) 45%,
-        rgba(11,11,15,0.96) 100%
+        rgba(11,11,15,0.90) 0%,
+        rgba(11,11,15,0.68) 45%,
+        rgba(11,11,15,0.95) 100%
       ),
       url("elamigo_backdrop_1920px_q80.webp");
 
-    /* zoom in a bit so the photo reads as “backdrop”, not “poster” */
-    background-size: 160%;
     background-repeat: no-repeat;
+    background-size: 200% auto;
 
-    /* push the sign away from the text */
-    background-position: 92% 28%;
+    /* push the sign off the left so text stays clean */
+    background-position: 100% 32%;
   }
 
-  /* give the text its own readable stage */
   .badge,
   .hero h1,
   .hero .sub{
-    display: inline-block;
+    display:inline-block;
     background: rgba(11,11,15,0.55);
     border: 1px solid rgba(255,255,255,0.10);
     border-radius: 14px;
     padding: 6px 10px;
-
-    /* nice when supported, harmless when not */
     -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
   }
 
-  /* keep your title spacing looking intentional */
   .hero h1{ margin: 12px 0 6px; }
   .hero .sub{ margin: 0 0 14px; max-width: 34ch; }
 
-  /* buttons pop a bit more over the photo */
-  .btn{
-    background: rgba(255,255,255,0.07);
-  }
+  .btn{ background: rgba(255,255,255,0.07); }
 }
-
-/* On small screens, adjust crop slightly */
-@media (max-width: 559px){
-  .hero{
-    background-position: 65% 30%;
-  }
-}
-@media (max-width: 600px){
-  .hero{
-    /* stronger overlay + better crop on mobile */
-    background:
-      linear-gradient(
-        180deg,
-        rgba(11,11,15,0.92) 0%,
-        rgba(11,11,15,0.68) 48%,
-        rgba(11,11,15,0.95) 100%
-      ),
-      url("elamigo_backdrop_1920px_q80.webp") !important;
-
-    background-repeat: no-repeat !important;
-    background-size: 170% auto !important;
-    background-position: 92% 28% !important;
-
-    /* slight tighten */
-    padding: 28px 20px 18px !important;
-  }
-}
-

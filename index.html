@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="El Amigo Authentic Mexican Food. Order online, call, or get directions." />
+  <link rel="canonical" href="https://www.elamigoauthenticmexicanfood.com/" />
   <title>El Amigo Authentic Mexican Food</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -15,14 +16,19 @@
     <p class="sub">Order online, call, or get directions in one tap.</p>
 
     <div class="actions">
-      <span class="btn primary glf-button"
-      data-glf-cuid="766e09b9-b553-416e-bcda-4c77faee2aea"
-      data-glf-ruid="3ecc1727-377d-4386-aba2-a2573162387e">
-  Order Online
-</span>
+      <!-- GloriaFood button (no URL needed) -->
+      <span
+        class="btn primary glf-button"
+        data-glf-cuid="766e09b9-b553-416e-bcda-4c77faee2aea"
+        data-glf-ruid="3ecc1727-377d-4386-aba2-a2573162387e"
+      >
+        Order Online
+      </span>
 
       <a class="btn" href="tel:+12195551234">Call</a>
-      <a class="btn" href="#" target="_blank" rel="noopener">Directions</a>
+
+      <!-- Placeholder for now (we'll replace with real Google Maps link) -->
+      <a class="btn" href="#" target="_blank" rel="noopener noreferrer">Directions</a>
     </div>
 
     <p class="micro">Replace the links later. For now we just want it deployed.</p>
@@ -47,7 +53,9 @@
       <h2>Location</h2>
       <p class="big">📍 Your Street Address, City, IN</p>
       <p class="note">We’ll swap this with the real address and a Google Maps link.</p>
-      <a class="link" href="#" target="_blank" rel="noopener">Open in Maps</a>
+
+      <!-- Placeholder for now (we'll replace with real Google Maps link) -->
+      <a class="link" href="#" target="_blank" rel="noopener noreferrer">Open in Maps</a>
     </section>
 
     <section class="card">
@@ -57,13 +65,15 @@
         <li>Burritos</li>
         <li>Quesadillas</li>
       </ul>
-      <a class="link glf-button"
-   href="#"
-   data-glf-cuid="766e09b9-b553-416e-bcda-4c77faee2aea"
-   data-glf-ruid="3ecc1727-377d-4386-aba2-a2573162387e">
-  See full menu / order →
-</a>
 
+      <!-- GloriaFood trigger: make it a span (avoid href="#") -->
+      <span
+        class="link glf-button"
+        data-glf-cuid="766e09b9-b553-416e-bcda-4c77faee2aea"
+        data-glf-ruid="3ecc1727-377d-4386-aba2-a2573162387e"
+      >
+        See full menu / order →
+      </span>
     </section>
   </main>
 
@@ -71,7 +81,10 @@
     <p>© <span id="y"></span> El Amigo Authentic Mexican Food</p>
   </footer>
 
+  <!-- GloriaFood embed script: load once, no async -->
+  <script src="https://www.fbgcdn.com/embedder/js/ewm2.js" defer></script>
+
+  <!-- Your script last -->
   <script src="script.js"></script>
-  <script src="https://www.fbgcdn.com/embedder/js/ewm2.js" defer async></script>
 </body>
 </html>

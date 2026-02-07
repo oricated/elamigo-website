@@ -20,7 +20,10 @@ body{
 
 .wrap{max-width:980px;margin:0 auto;padding:20px}
 
-.hero{padding:34px 20px 22px;border-bottom:1px solid var(--line)}
+.hero{
+  padding:34px 20px 22px;
+  border-bottom:1px solid var(--line);
+}
 
 .badge{
   display:inline-block;
@@ -35,37 +38,38 @@ h1{margin:14px 0 6px;font-size:42px}
 .sub{margin:0 0 18px;color:var(--muted)}
 
 .actions{
-  display:flex;
-  flex-wrap:wrap;
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap:10px;
   margin:10px 0 8px;
 }
-
-/* 2-up buttons by default */
-.actions .btn{
-  flex: 1 1 calc(50% - 10px);
-  min-width: 0; /* prevents weird squeezing */
-}
-
-/* 3rd button full width */
-.actions .btn.full{
-  flex: 1 1 100%;
-}
-
 
 .btn{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  padding:12px 14px;
+
+  width:100%;
+  min-width:0;
+
+  padding:12px 10px;
   border-radius:14px;
   border:1px solid var(--line);
+
   background:rgba(255,255,255,0.02);
   color:var(--text);
   text-decoration:none;
   font-weight:650;
-  min-width:140px;
-  user-select:none;
+
+  /* keeps labels from wrapping, but won’t break layout */
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+
+  /* responsive text so 3 buttons fit on mobile */
+  font-size: clamp(13px, 3.4vw, 15px);
+  line-height:1.1;
+  cursor:pointer;
 }
 
 .btn.primary{
@@ -74,8 +78,9 @@ h1{margin:14px 0 6px;font-size:42px}
   color:#1a1209;
 }
 
-.btn:hover{filter:brightness(1.05)}
-.btn:active{transform:translateY(1px)}
+.btn-wide{
+  margin-top:12px;
+}
 
 .micro{color:var(--muted);font-size:13px;margin:10px 0 0}
 
@@ -130,33 +135,6 @@ h1{margin:14px 0 6px;font-size:42px}
   color:var(--muted);
   border-top:1px solid var(--line);
   margin-top:18px;
-}
-
-.glf-button{cursor:pointer}
-
-/* Full-width CTA helper (used in Top picks) */
-.btn-wide{
-  width:100%;
-  margin-top:12px;
-}
-
-/* Mobile CTA layout: 2-up then full-width */
-@media (max-width: 640px){
-  .actions{
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    gap:10px;
-  }
-
-  .btn{
-    width:100%;
-    min-width:0;
-  }
-
-  /* Directions is 3rd item inside .actions */
-  .actions .btn:nth-child(3){
-    grid-column: 1 / -1;
-  }
 }
 
 @media (min-width: 820px){

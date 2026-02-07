@@ -1,0 +1,57 @@
+:root{
+  --bg:#0b0b0f;
+  --text:#f6f6fb;
+  --muted:#b9b9c7;
+  --line:#232335;
+  --accent:#f7b955;
+  --accent2:#ff7a5c;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(1200px 600px at 15% 10%, #241a10 0%, var(--bg) 50%),
+              radial-gradient(900px 600px at 90% 20%, #1b1024 0%, var(--bg) 45%);
+  color:var(--text);
+}
+.wrap{max-width:980px;margin:0 auto;padding:20px}
+.hero{padding:34px 20px 22px;border-bottom:1px solid var(--line)}
+.badge{
+  display:inline-block;padding:6px 10px;border:1px solid var(--line);
+  border-radius:999px;color:var(--muted);font-size:13px;
+}
+h1{margin:14px 0 6px;font-size:42px}
+.sub{margin:0 0 18px;color:var(--muted)}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 8px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:12px 14px;border-radius:14px;border:1px solid var(--line);
+  background:rgba(255,255,255,0.02);color:var(--text);
+  text-decoration:none;font-weight:650;min-width:140px;
+}
+.btn.primary{
+  border-color:transparent;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+  color:#1a1209;
+}
+.micro{color:var(--muted);font-size:13px;margin:10px 0 0}
+.grid{display:grid;grid-template-columns:1fr;gap:14px;padding-top:18px}
+.card{
+  background: rgba(255,255,255,0.03);
+  border:1px solid var(--line);
+  border-radius:18px;padding:16px;
+}
+.card h2{margin:0 0 10px;font-size:18px}
+.note{color:var(--muted);font-size:13px;margin:10px 0 0}
+.big{font-size:16px;margin:0 0 10px}
+.list{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.list li{display:flex;justify-content:space-between;border-bottom:1px dashed rgba(255,255,255,0.08);padding-bottom:8px}
+.list li span:first-child{color:var(--muted)}
+.bullets{margin:0;padding-left:18px}
+.bullets li{margin:8px 0}
+.link{display:inline-block;margin-top:8px;color:var(--accent);text-decoration:none;font-weight:650}
+.footer{padding:26px 20px 40px;color:var(--muted);border-top:1px solid var(--line);margin-top:18px}
+@media (min-width: 820px){
+  .grid{grid-template-columns:1fr 1fr}
+  h1{font-size:56px}
+}

@@ -168,4 +168,26 @@ h1{margin:14px 0 6px;font-size:42px}
 
 /* Nice touch: make GloriaFood spans feel clickable */
 .glf-button{ cursor: pointer; }
+/* --- Mobile fix: prevent "Order O..." truncation --- */
+@media (max-width: 520px){
+  .actions{
+    display:grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap:10px;
+  }
+
+  .actions .btn{
+    min-width:0;
+    width:100%;
+    padding:12px 12px;
+    white-space:nowrap;
+    overflow:visible !important;
+    text-overflow:clip !important;
+  }
+
+  /* Make the main CTA span both columns */
+  .actions .btn.primary{
+    grid-column: 1 / -1;
+  }
+}
 

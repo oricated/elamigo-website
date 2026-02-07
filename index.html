@@ -4,31 +4,37 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="El Amigo Authentic Mexican Food. Order online, call, or get directions." />
-  <link rel="canonical" href="https://www.elamigoauthenticmexicanfood.com/" />
   <title>El Amigo Authentic Mexican Food</title>
-  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Canonical (helps SEO + keeps www as the “official” version) -->
+  <link rel="canonical" href="https://www.elamigoauthenticmexicanfood.com/" />
+
+  <link rel="stylesheet" href="styles.css?v=3" />
 </head>
 
 <body>
   <header class="wrap hero">
-    <div class="badge">El Amigo Authentic Mexican Food</div>
+    <div class="badge">Authentic Mexican Food</div>
     <h1>El Amigo</h1>
     <p class="sub">Order online, call, or get directions in one tap.</p>
 
+    <!-- 3 equal buttons, always across -->
     <div class="actions">
-      <!-- GloriaFood button (no URL needed) -->
+      <!-- GloriaFood button (no href needed) -->
       <span
         class="btn primary glf-button"
         data-glf-cuid="766e09b9-b553-416e-bcda-4c77faee2aea"
         data-glf-ruid="3ecc1727-377d-4386-aba2-a2573162387e"
+        role="button"
+        tabindex="0"
       >
         Order Online
       </span>
 
       <a class="btn" href="tel:+12195551234">Call</a>
 
-      <!-- Placeholder for now (we'll replace with real Google Maps link) -->
-      <a class="btn full" href="#" target="_blank" rel="noopener noreferrer">Directions</a>
+      <!-- Replace # with your real Google Maps link later -->
+      <a class="btn" href="#" target="_blank" rel="noopener">Directions</a>
     </div>
 
     <p class="micro">Replace the links later. For now we just want it deployed.</p>
@@ -53,9 +59,7 @@
       <h2>Location</h2>
       <p class="big">📍 Your Street Address, City, IN</p>
       <p class="note">We’ll swap this with the real address and a Google Maps link.</p>
-
-      <!-- Placeholder for now (we'll replace with real Google Maps link) -->
-      <a class="link" href="#" target="_blank" rel="noopener noreferrer">Open in Maps</a>
+      <a class="link" href="#" target="_blank" rel="noopener">Open in Maps</a>
     </section>
 
     <section class="card">
@@ -66,14 +70,16 @@
         <li>Quesadillas</li>
       </ul>
 
-      <!-- GloriaFood trigger: make it a span (avoid href="#") -->
-      <span
-        class="link glf-button"
+      <!-- Secondary GloriaFood entry -->
+      <a
+        class="btn primary glf-button btn-wide"
         data-glf-cuid="766e09b9-b553-416e-bcda-4c77faee2aea"
         data-glf-ruid="3ecc1727-377d-4386-aba2-a2573162387e"
+        href="#"
+        role="button"
       >
         See full menu / order →
-      </span>
+      </a>
     </section>
   </main>
 
@@ -81,10 +87,9 @@
     <p>© <span id="y"></span> El Amigo Authentic Mexican Food</p>
   </footer>
 
-  <!-- GloriaFood embed script: load once, no async -->
-  <script src="https://www.fbgcdn.com/embedder/js/ewm2.js" defer></script>
-
-  <!-- Your script last -->
   <script src="script.js"></script>
+
+  <!-- GloriaFood embed script -->
+  <script src="https://www.fbgcdn.com/embedder/js/ewm2.js" defer async></script>
 </body>
 </html>

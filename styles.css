@@ -31,7 +31,7 @@ body{
   border:0;
 }
 
-/* HERO: photo is the main info; buttons live at the bottom */
+/* HERO: photo only (no buttons inside anymore) */
 .hero{
   position: relative;
   border-bottom:1px solid var(--line);
@@ -39,11 +39,8 @@ body{
   /* Gives the header “billboard” space */
   min-height: clamp(260px, 42vh, 420px);
 
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-
-  padding: 18px 20px;
+  /* keep hero clean */
+  padding: 0;
 }
 
 /* Background image + overlay */
@@ -61,7 +58,13 @@ body{
   background-position: 75% 35%;
 }
 
-/* Button panel at the bottom (readable over photo) */
+/* Wrapper spacing for the action bar under the hero */
+.actions-wrap{
+  padding-top: 14px;
+  padding-bottom: 0;
+}
+
+/* Button panel (now below hero, not over it) */
 .hero-actions{
   width:100%;
   background: rgba(11,11,15,0.55);
@@ -77,7 +80,7 @@ body{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:10px;
-  margin:0; /* important: no floating gap above */
+  margin:0;
 }
 .actions .btn.primary{grid-column:1 / -1;}
 
@@ -162,7 +165,7 @@ body{
 @media (max-width: 600px){
   .hero{
     min-height: 320px;
-    padding: 14px 16px;
+    padding: 0;
   }
   .hero-photo{
     background-size: 210% auto;
@@ -173,3 +176,4 @@ body{
     padding: 10px;
   }
 }
+

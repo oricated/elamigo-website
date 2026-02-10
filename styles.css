@@ -31,113 +31,7 @@ body{
   border:0;
 }
 
-/* =========================
-   Small Top Area (Sticky)
-   ========================= */
-.topbar{
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: rgba(11,11,15,0.74);
-  border-bottom: 1px solid rgba(255,255,255,0.10);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-}
-
-.topbar .wrap{
-  padding: 10px 14px; /* override wrap padding inside topbar */
-}
-
-.topbar-inner{
-  display:flex;
-  align-items:center;
-}
-
-.brand{
-  display:inline-flex;
-  align-items:center;
-  text-decoration:none;
-}
-
-/* Keep logo small for the top area */
-.elamigo-logo{
-  width: clamp(160px, 26vw, 240px);
-  height: auto;
-  display:block;
-}
-
-/* SVG colors + text styles */
-.elamigo-logo .logo-frame{
-  fill:#ffffff;
-  stroke:#5b0c12;
-  stroke-width:18;
-}
-.elamigo-logo .logo-inner{
-  fill:#ffffff;
-  stroke:#1f6b3a;
-  stroke-width:12;
-}
-
-.elamigo-logo .banner-shape{
-  fill:#1f6b3a;
-  stroke:#d9a13a;
-  stroke-width:10;
-}
-
-.elamigo-logo .banner-text{
-  fill:#ffffff;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-/* Slightly smaller ampersand */
-.elamigo-logo .amp{
-  font-size: 0.85em;
-}
-
-.elamigo-logo .title{
-  fill:#d61d21;
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: 900;
-  letter-spacing: 0.06em;
-}
-
-.elamigo-logo .subhead{
-  fill:#1b1b1b;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  font-weight: 900;
-  letter-spacing: 0.04em;
-}
-
-.elamigo-logo .phone{
-  fill:#d61d21;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  font-weight: 900;
-  letter-spacing: 0.02em;
-}
-
-/* Subtle banner float animation */
-.elamigo-logo .banner{
-  transform-origin: 490px 130px;
-  animation: bannerFloat 6s ease-in-out infinite;
-}
-
-@keyframes bannerFloat{
-  0%   { transform: translateY(0); }
-  50%  { transform: translateY(-3px); }
-  100% { transform: translateY(0); }
-}
-
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce){
-  .elamigo-logo .banner{ animation: none; }
-}
-
-/* =========================
-   HERO: photo is the main info; buttons live at the bottom
-   ========================= */
+/* HERO: photo is the main info; buttons live at the bottom */
 .hero{
   position: relative;
   border-bottom:1px solid var(--line);
@@ -183,7 +77,7 @@ body{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:10px;
-  margin:0;
+  margin:0; /* important: no floating gap above */
 }
 .actions .btn.primary{grid-column:1 / -1;}
 

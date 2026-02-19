@@ -1,178 +1,228 @@
-:root{
-  --bg:#0b0b0f;
-  --text:#f6f6fb;
-  --muted:#b9b9c7;
-  --line:#232335;
-  --accent:#f7b955;
-  --accent2:#ff7a5c;
-}
-
-*{box-sizing:border-box}
-
-body{
-  margin:0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background:
-    radial-gradient(1200px 600px at 15% 10%, #241a10 0%, var(--bg) 50%),
-    radial-gradient(900px 600px at 90% 20%, #1b1024 0%, var(--bg) 45%);
-  color:var(--text);
-}
-
-.wrap{max-width:980px;margin:0 auto;padding:20px}
-
-/* Hide-only utility (SEO + accessibility) */
-.sr-only{
-  position:absolute;
-  width:1px;height:1px;
-  padding:0;margin:-1px;
-  overflow:hidden;
-  clip:rect(0,0,0,0);
-  white-space:nowrap;
-  border:0;
-}
-
-/* HERO: photo only (no buttons inside anymore) */
-.hero{
-  position: relative;
-  border-bottom:1px solid var(--line);
-
-  /* Gives the header “billboard” space */
-  min-height: clamp(260px, 42vh, 420px);
-
-  /* keep hero clean */
-  padding: 0;
-}
-
-/* Background image + overlay */
-.hero-photo{
-  background:
-    linear-gradient(
-      180deg,
-      rgba(11,11,15,0.18) 0%,
-      rgba(11,11,15,0.42) 55%,
-      rgba(11,11,15,0.92) 100%
-    ),
-    url("elamigo_backdrop_1920px_q80.webp");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 75% 35%;
-}
-
-/* Wrapper spacing for the action bar under the hero */
-.actions-wrap{
-  padding-top: 14px;
-  padding-bottom: 0;
-}
-
-/* Button panel (now below hero, not over it) */
-.hero-actions{
-  width:100%;
-  background: rgba(11,11,15,0.55);
-  border: 1px solid rgba(255,255,255,0.10);
-  border-radius: 18px;
-  padding: 12px;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-}
-
-/* Buttons */
-.actions{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-  margin:0;
-}
-.actions .btn.primary{grid-column:1 / -1;}
-
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:12px 14px;
-  border-radius:14px;
-  border:1px solid var(--line);
-  background:rgba(255,255,255,0.06);
-  color:var(--text);
-  text-decoration:none;
-  font-weight:650;
-  width:100%;
-  cursor:pointer;
-  appearance:none;
-}
-
-.btn.primary{
-  border-color:transparent;
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
-  color:#1a1209;
-}
-
-.btn-wide{width:100%}
-
-/* Main grid/cards */
-.grid{display:grid;grid-template-columns:1fr;gap:14px;padding-top:18px}
-
-.card{
-  background: rgba(255,255,255,0.03);
-  border:1px solid var(--line);
-  border-radius:18px;
-  padding:16px;
-}
-
-.card h2{margin:0 0 10px;font-size:18px}
-.note{color:var(--muted);font-size:13px;margin:10px 0 0}
-.big{font-size:16px;margin:0 0 10px}
-
-.bullets{margin:0;padding-left:18px}
-.bullets li{margin:8px 0}
-
-.link{
-  display:inline-block;
-  margin-top:8px;
-  color:var(--accent);
-  text-decoration:none;
-  font-weight:650;
-}
-
-.footer{
-  padding:26px 20px 40px;
-  color:var(--muted);
-  border-top:1px solid var(--line);
-  margin-top:18px;
-}
-
-.hoursline{
-  display:flex;
-  justify-content:space-between;
-  gap:12px;
-  padding:10px 0;
-  border-bottom:1px dashed rgba(255,255,255,0.08);
-  margin:0;
-}
-.hoursline strong{color:var(--text)}
-.hoursline span{color:var(--text)}
-
-/* Wider screens */
-@media (min-width: 560px){
-  .actions{grid-template-columns:repeat(3, 1fr)}
-  .actions .btn.primary{grid-column:auto}
-}
-
-@media (min-width: 820px){
-  .grid{grid-template-columns:1fr 1fr}
-}
-
-/* Mobile crop tuning so the photo looks intentional */
-@media (max-width: 600px){
-  .hero{
-    min-height: 320px;
-    padding: 0;
-  }
-  .hero-photo{
-    background-size: 210% auto;
-    background-position: 100% 30%;
-  }
-  .hero-actions{
-    border-radius: 16px;
-    padding: 10px;
-  }
-}
+diff --git a/styles.css b/styles.css
+index bf38b54ef3c82b198ffe204e3c1f7bbf02175d51..0748e22fccca07ce2cac85f7f8cfd7797860fa93 100644
+--- a/styles.css
++++ b/styles.css
+@@ -1,178 +1,196 @@
+ :root{
+   --bg:#0b0b0f;
+   --text:#f6f6fb;
+   --muted:#b9b9c7;
+   --line:#232335;
+   --accent:#f7b955;
+   --accent2:#ff7a5c;
++  --good:#45d483;
+ }
+ 
+ *{box-sizing:border-box}
+ 
+ body{
+   margin:0;
+   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+   background:
+     radial-gradient(1200px 600px at 15% 10%, #241a10 0%, var(--bg) 50%),
+     radial-gradient(900px 600px at 90% 20%, #1b1024 0%, var(--bg) 45%);
+   color:var(--text);
++  line-height:1.45;
+ }
+ 
+ .wrap{max-width:980px;margin:0 auto;padding:20px}
+ 
+ /* Hide-only utility (SEO + accessibility) */
+ .sr-only{
+   position:absolute;
+   width:1px;height:1px;
+   padding:0;margin:-1px;
+   overflow:hidden;
+   clip:rect(0,0,0,0);
+   white-space:nowrap;
+   border:0;
+ }
+ 
+ /* HERO: photo only (no buttons inside anymore) */
+ .hero{
+   position: relative;
+   border-bottom:1px solid var(--line);
+-
+-  /* Gives the header “billboard” space */
+   min-height: clamp(260px, 42vh, 420px);
+-
+-  /* keep hero clean */
+   padding: 0;
+ }
+ 
+-/* Background image + overlay */
+ .hero-photo{
+   background:
+     linear-gradient(
+       180deg,
+       rgba(11,11,15,0.18) 0%,
+       rgba(11,11,15,0.42) 55%,
+       rgba(11,11,15,0.92) 100%
+     ),
+     url("elamigo_backdrop_1920px_q80.webp");
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: 75% 35%;
+ }
+ 
+-/* Wrapper spacing for the action bar under the hero */
+-.actions-wrap{
+-  padding-top: 14px;
+-  padding-bottom: 0;
++.welcome{padding-top:18px;padding-bottom:6px}
++.eyebrow{
++  margin:0;
++  color:var(--accent);
++  font-weight:700;
++  letter-spacing:.02em;
++  text-transform:uppercase;
++  font-size:12px;
+ }
++.welcome-title{margin:8px 0 8px;font-size:clamp(1.4rem,4vw,2rem);line-height:1.15}
++.welcome-copy{margin:0;color:var(--muted);max-width:70ch}
++
++.actions-wrap{padding-top:14px;padding-bottom:0}
+ 
+-/* Button panel (now below hero, not over it) */
+ .hero-actions{
+   width:100%;
+   background: rgba(11,11,15,0.55);
+   border: 1px solid rgba(255,255,255,0.10);
+   border-radius: 18px;
+   padding: 12px;
+   -webkit-backdrop-filter: blur(10px);
+   backdrop-filter: blur(10px);
++  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
++}
++
++.status{
++  display:flex;
++  align-items:center;
++  gap:8px;
++  margin-bottom:10px;
++  color:var(--muted);
++  font-size:14px;
++}
++.status-dot{
++  width:10px;
++  height:10px;
++  border-radius:50%;
++  background:var(--good);
++  box-shadow:0 0 0 4px rgba(69,212,131,0.18);
+ }
+ 
+-/* Buttons */
+ .actions{
+   display:grid;
+   grid-template-columns:1fr 1fr;
+   gap:10px;
+   margin:0;
+ }
+ .actions .btn.primary{grid-column:1 / -1;}
+ 
+ .btn{
+   display:inline-flex;
+   align-items:center;
+   justify-content:center;
+   padding:12px 14px;
+   border-radius:14px;
+   border:1px solid var(--line);
+   background:rgba(255,255,255,0.06);
+   color:var(--text);
+   text-decoration:none;
+   font-weight:650;
+   width:100%;
+   cursor:pointer;
+   appearance:none;
++  transition:transform .15s ease, box-shadow .15s ease, filter .15s ease;
++}
++.btn:hover,
++.btn:focus-visible{
++  transform:translateY(-1px);
++  box-shadow:0 8px 18px rgba(0,0,0,.25);
++  filter:brightness(1.06);
+ }
+ 
+ .btn.primary{
+   border-color:transparent;
+   background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+   color:#1a1209;
+ }
+ 
+-.btn-wide{width:100%}
++.btn-wide{width:100%;margin-top:8px}
+ 
+-/* Main grid/cards */
+ .grid{display:grid;grid-template-columns:1fr;gap:14px;padding-top:18px}
+ 
+ .card{
+   background: rgba(255,255,255,0.03);
+   border:1px solid var(--line);
+   border-radius:18px;
+   padding:16px;
+ }
++.card-soft{
++  background:linear-gradient(180deg, rgba(247,185,85,0.10) 0%, rgba(255,255,255,0.03) 100%);
++}
+ 
+ .card h2{margin:0 0 10px;font-size:18px}
+ .note{color:var(--muted);font-size:13px;margin:10px 0 0}
+ .big{font-size:16px;margin:0 0 10px}
+ 
+ .bullets{margin:0;padding-left:18px}
+ .bullets li{margin:8px 0}
+ 
+ .link{
+   display:inline-block;
+   margin-top:8px;
+   color:var(--accent);
+   text-decoration:none;
+   font-weight:650;
+ }
+ 
+ .footer{
+   padding:26px 20px 40px;
+   color:var(--muted);
+   border-top:1px solid var(--line);
+   margin-top:18px;
+ }
+ 
+ .hoursline{
+   display:flex;
+   justify-content:space-between;
+   gap:12px;
+   padding:10px 0;
+   border-bottom:1px dashed rgba(255,255,255,0.08);
+   margin:0;
+ }
+ .hoursline strong{color:var(--text)}
+ .hoursline span{color:var(--text)}
+ 
+-/* Wider screens */
+ @media (min-width: 560px){
+   .actions{grid-template-columns:repeat(3, 1fr)}
+   .actions .btn.primary{grid-column:auto}
+ }
+ 
+ @media (min-width: 820px){
+   .grid{grid-template-columns:1fr 1fr}
+ }
+ 
+-/* Mobile crop tuning so the photo looks intentional */
+ @media (max-width: 600px){
+-  .hero{
+-    min-height: 320px;
+-    padding: 0;
+-  }
+-  .hero-photo{
+-    background-size: 210% auto;
+-    background-position: 100% 30%;
+-  }
+-  .hero-actions{
+-    border-radius: 16px;
+-    padding: 10px;
+-  }
++  .hero{min-height: 320px;padding: 0;}
++  .hero-photo{background-size: 210% auto;background-position: 100% 30%;}
++  .hero-actions{border-radius: 16px;padding: 10px;}
+ }

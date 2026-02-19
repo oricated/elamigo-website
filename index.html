@@ -1,92 +1,111 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="El Amigo Authentic Mexican Food in Valparaiso, IN. Order online, call, or get directions." />
-  <title>El Amigo Authentic Mexican Food</title>
-
-  <link rel="canonical" href="https://www.elamigoauthenticmexicanfood.com/" />
-  <link rel="stylesheet" href="styles.css?v=12" />
-</head>
-
-<body>
-  <header class="wrap hero hero-photo">
-    <!-- Hidden text (SEO + accessibility) -->
-    <div class="sr-only">
-      <h1>El Amigo Authentic Mexican Food</h1>
-      <p>Order online, call, or get directions in one tap.</p>
-    </div>
-  </header>
-
-  <!-- Action buttons BELOW the hero (no obstruction on the photo) -->
-  <nav class="wrap actions-wrap" aria-label="Quick actions">
-    <div class="hero-actions">
-      <div class="actions">
-        <!-- GloriaFood button -->
-        <button
-          class="btn primary glf-button"
-          type="button"
-          data-glf-cuid="766e09b9-b553-416e-bcda-4c77faee2aea"
-          data-glf-ruid="3ecc1727-377d-4386-aba2-a2573162387e"
-        >
-          Order Online
-        </button>
-
-        <a class="btn" href="tel:+12195315606">Call</a>
-
-        <a
-          class="btn"
-          href="https://www.google.com/maps/dir/?api=1&destination=El%20Amigo%20Authentic%20Mexican%20Food%2C%203032%20Calumet%20Ave%2C%20Valparaiso%2C%20IN%2046383&travelmode=driving&dir_action=navigate"
-          target="_blank"
-          rel="noopener noreferrer"
-        >Directions</a>
-      </div>
-    </div>
-  </nav>
-
-  <main class="wrap grid">
-    <section class="card">
-      <h2>Hours</h2>
-      <p class="hoursline"><strong>Monday–Sunday</strong> <span>10:00 AM – 10:00 PM</span></p>
-      <p class="note">Lunes–Domingo</p>
-    </section>
-
-    <section class="card">
-      <h2>Location</h2>
-      <p class="big">📍 3032 Calumet Ave, Valparaiso, IN 46383</p>
-      <a
-        class="link"
-        href="https://www.google.com/maps?cid=14958895656403832874"
-        target="_blank"
-        rel="noopener noreferrer"
-      >Open in Maps</a>
-    </section>
-
-    <section class="card">
-      <h2>Top picks</h2>
-      <ul class="bullets">
-        <li>Tacos</li>
-        <li>Burritos</li>
-        <li>Quesadillas</li>
-      </ul>
-
-      <button
-        class="btn primary glf-button btn-wide"
-        type="button"
-        data-glf-cuid="766e09b9-b553-416e-bcda-4c77faee2aea"
-        data-glf-ruid="3ecc1727-377d-4386-aba2-a2573162387e"
-      >
-        See full menu / order →
-      </button>
-    </section>
-  </main>
-
-  <footer class="wrap footer">
-    <p>© <span id="y"></span> El Amigo Authentic Mexican Food</p>
-  </footer>
-
-  <script src="script.js?v=12"></script>
-  <script src="https://www.fbgcdn.com/embedder/js/ewm2.js" defer async></script>
-</body>
-</html>
+diff --git a/index.html b/index.html
+index 89a651f989c170cbf43d2a3544b025162370eb72..a44a7b0e9059639be2c6333b361188a32da089ec 100644
+--- a/index.html
++++ b/index.html
+@@ -1,49 +1,59 @@
+ <!doctype html>
+ <html lang="en">
+ <head>
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width,initial-scale=1" />
+   <meta name="description" content="El Amigo Authentic Mexican Food in Valparaiso, IN. Order online, call, or get directions." />
+   <title>El Amigo Authentic Mexican Food</title>
+ 
+   <link rel="canonical" href="https://www.elamigoauthenticmexicanfood.com/" />
+-  <link rel="stylesheet" href="styles.css?v=12" />
++  <link rel="stylesheet" href="styles.css?v=13" />
+ </head>
+ 
+ <body>
+   <header class="wrap hero hero-photo">
+     <!-- Hidden text (SEO + accessibility) -->
+     <div class="sr-only">
+       <h1>El Amigo Authentic Mexican Food</h1>
+       <p>Order online, call, or get directions in one tap.</p>
+     </div>
+   </header>
+ 
++  <section class="wrap welcome" aria-label="Quick info">
++    <p class="eyebrow">Family-owned • Freshly made • Fast pickup</p>
++    <h1 class="welcome-title">Authentic Mexican favorites, made fresh every day.</h1>
++    <p class="welcome-copy">From tacos and burritos to quesadillas and house specialties, El Amigo brings bold flavor and friendly service to every order.</p>
++  </section>
++
+   <!-- Action buttons BELOW the hero (no obstruction on the photo) -->
+   <nav class="wrap actions-wrap" aria-label="Quick actions">
+     <div class="hero-actions">
++      <div class="status" role="status" aria-live="polite">
++        <span class="status-dot" aria-hidden="true"></span>
++        <span id="open-status">Open daily 10:00 AM – 10:00 PM</span>
++      </div>
+       <div class="actions">
+         <!-- GloriaFood button -->
+         <button
+           class="btn primary glf-button"
+           type="button"
+           data-glf-cuid="766e09b9-b553-416e-bcda-4c77faee2aea"
+           data-glf-ruid="3ecc1727-377d-4386-aba2-a2573162387e"
+         >
+           Order Online
+         </button>
+ 
+         <a class="btn" href="tel:+12195315606">Call</a>
+ 
+         <a
+           class="btn"
+           href="https://www.google.com/maps/dir/?api=1&destination=El%20Amigo%20Authentic%20Mexican%20Food%2C%203032%20Calumet%20Ave%2C%20Valparaiso%2C%20IN%2046383&travelmode=driving&dir_action=navigate"
+           target="_blank"
+           rel="noopener noreferrer"
+         >Directions</a>
+       </div>
+     </div>
+   </nav>
+ 
+   <main class="wrap grid">
+     <section class="card">
+@@ -58,35 +68,44 @@
+       <a
+         class="link"
+         href="https://www.google.com/maps?cid=14958895656403832874"
+         target="_blank"
+         rel="noopener noreferrer"
+       >Open in Maps</a>
+     </section>
+ 
+     <section class="card">
+       <h2>Top picks</h2>
+       <ul class="bullets">
+         <li>Tacos</li>
+         <li>Burritos</li>
+         <li>Quesadillas</li>
+       </ul>
+ 
+       <button
+         class="btn primary glf-button btn-wide"
+         type="button"
+         data-glf-cuid="766e09b9-b553-416e-bcda-4c77faee2aea"
+         data-glf-ruid="3ecc1727-377d-4386-aba2-a2573162387e"
+       >
+         See full menu / order →
+       </button>
+     </section>
++
++    <section class="card card-soft">
++      <h2>Why locals love El Amigo</h2>
++      <ul class="bullets">
++        <li>Made-to-order meals with authentic flavor</li>
++        <li>Easy online ordering for pickup</li>
++        <li>Convenient location with quick directions</li>
++      </ul>
++    </section>
+   </main>
+ 
+   <footer class="wrap footer">
+     <p>© <span id="y"></span> El Amigo Authentic Mexican Food</p>
+   </footer>
+ 
+-  <script src="script.js?v=12"></script>
++  <script src="script.js?v=13"></script>
+   <script src="https://www.fbgcdn.com/embedder/js/ewm2.js" defer async></script>
+ </body>
+ </html>

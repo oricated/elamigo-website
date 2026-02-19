@@ -9,15 +9,17 @@
 
 *{box-sizing:border-box}
 
+html{scroll-behavior:smooth;}
+
 body{
   margin:0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height:1.35;
   background:
     radial-gradient(1200px 600px at 15% 10%, #241a10 0%, var(--bg) 50%),
     radial-gradient(900px 600px at 90% 20%, #1b1024 0%, var(--bg) 45%);
   color:var(--text);
 }
-
 .wrap{max-width:980px;margin:0 auto;padding:20px}
 
 /* Hide-only utility (SEO + accessibility) */
@@ -31,31 +33,59 @@ body{
   border:0;
 }
 
-/* HERO: photo only (no buttons inside anymore) */
+/* HERO: full-bleed photo */
 .hero{
   position: relative;
   border-bottom:1px solid var(--line);
-
-  /* Gives the header “billboard” space */
-  min-height: clamp(260px, 42vh, 420px);
-
-  /* keep hero clean */
-  padding: 0;
+  min-height: clamp(280px, 42vh, 460px);
+  padding:0;
 }
 
-/* Background image + overlay */
 .hero-photo{
   background:
     linear-gradient(
       180deg,
-      rgba(11,11,15,0.18) 0%,
-      rgba(11,11,15,0.42) 55%,
+      rgba(11,11,15,0.12) 0%,
+      rgba(11,11,15,0.40) 55%,
       rgba(11,11,15,0.92) 100%
     ),
     url("elamigo_backdrop_1920px_q80.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 75% 35%;
+}
+/* Override .wrap padding inside hero so the hero truly feels full-bleed */
+.hero .wrap{padding:0;}
+
+.hero-inner{
+  min-height: inherit;
+  display:flex;
+  align-items:flex-end;
+}
+
+.hero-badge{
+  margin: 0 20px 18px;
+  padding: 12px 14px;
+  border-radius: 18px;
+  background: rgba(11,11,15,0.40);
+  border: 1px solid rgba(255,255,255,0.10);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 16px 42px rgba(0,0,0,0.35);
+  max-width: 520px;
+}
+
+.hero-title{
+  margin:0;
+  font-size: clamp(26px, 4vw, 42px);
+  letter-spacing: 0.3px;
+}
+
+.hero-tag{
+  margin:6px 0 0;
+  color: var(--muted);
+  font-weight: 650;
+  font-size: 14px;
 }
 
 /* Wrapper spacing for the action bar under the hero */
@@ -64,7 +94,7 @@ body{
   padding-bottom: 0;
 }
 
-/* Button panel (now below hero, not over it) */
+/* Button panel (below hero) */
 .hero-actions{
   width:100%;
   background: rgba(11,11,15,0.55);
@@ -73,6 +103,7 @@ body{
   padding: 12px;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
+  box-shadow: 0 16px 42px rgba(0,0,0,0.30);
 }
 
 /* Buttons */
@@ -98,6 +129,15 @@ body{
   width:100%;
   cursor:pointer;
   appearance:none;
+  transition: transform 140ms ease, background 140ms ease, border-color 140ms ease, filter 140ms ease;
+}
+
+.btn:hover{transform: translateY(-1px); background:rgba(255,255,255,0.08); border-color:rgba(255,255,255,0.16);}
+.btn:active{transform: translateY(0);}
+
+.btn:focus-visible{
+  outline: 2px solid rgba(247,185,85,0.85);
+  outline-offset: 2px;
 }
 
 .btn.primary{
@@ -105,6 +145,8 @@ body{
   background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
   color:#1a1209;
 }
+
+.btn.primary:hover{filter: brightness(1.04);}
 
 .btn-wide{width:100%}
 
@@ -116,14 +158,12 @@ body{
   border:1px solid var(--line);
   border-radius:18px;
   padding:16px;
+  box-shadow: 0 12px 34px rgba(0,0,0,0.25);
 }
 
 .card h2{margin:0 0 10px;font-size:18px}
 .note{color:var(--muted);font-size:13px;margin:10px 0 0}
 .big{font-size:16px;margin:0 0 10px}
-
-.bullets{margin:0;padding-left:18px}
-.bullets li{margin:8px 0}
 
 .link{
   display:inline-block;
@@ -131,7 +171,11 @@ body{
   color:var(--accent);
   text-decoration:none;
   font-weight:650;
+  transition: transform 140ms ease, filter 140ms ease;
 }
+
+.link:hover{transform: translateY(-1px); filter: brightness(1.05);}
+.link:focus-visible{outline: 2px solid rgba(247,185,85,0.85); outline-offset: 3px; border-radius: 10px;}
 
 .footer{
   padding:26px 20px 40px;
@@ -144,12 +188,31 @@ body{
   display:flex;
   justify-content:space-between;
   gap:12px;
+  flex-wrap:wrap;
   padding:10px 0;
   border-bottom:1px dashed rgba(255,255,255,0.08);
   margin:0;
 }
 .hoursline strong{color:var(--text)}
-.hoursline span{color:var(--text)}
+.hoursline span{color:var(--text); margin-left:auto;}
+
+/* Top picks → chips */
+.chips{
+  list-style:none;
+  padding:0;
+  margin: 0 0 14px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.chips li{
+  padding:8px 10px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.05);
+  font-weight:650;
+}
 
 /* Wider screens */
 @media (min-width: 560px){
@@ -159,6 +222,7 @@ body{
 
 @media (min-width: 820px){
   .grid{grid-template-columns:1fr 1fr}
+  .span-2{grid-column: 1 / -1;}
 }
 
 /* Mobile crop tuning so the photo looks intentional */
@@ -171,9 +235,11 @@ body{
     background-size: 210% auto;
     background-position: 100% 30%;
   }
-  .hero-actions{
-    border-radius: 16px;
-    padding: 10px;
-  }
+  .hero-badge{margin: 0 14px 14px; border-radius: 16px;}
+  .hero-actions{border-radius: 16px; padding: 10px;}
 }
 
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{transition:none !important;}
+}

@@ -167,12 +167,12 @@ body{
     min-height: 320px;
     padding: 0;
   }
-  @media (max-width: 600px){
+
   .hero-photo{
     background-size: 170% auto;
     background-position: 78% 26%;
   }
-}
+
   .hero-actions{
     border-radius: 16px;
     padding: 10px;

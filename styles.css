@@ -53,7 +53,7 @@ body{
       rgba(11,11,15,0.42) 55%,
       rgba(11,11,15,0.92) 100%
     ),
-    url("elamigo_backdrop_1920px_q80.webp");
+    url("hero.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 75% 35%;

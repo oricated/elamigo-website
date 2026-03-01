@@ -289,7 +289,7 @@ body{
     padding: 10px;
   }
 
-  /* ✅ Key fix: remove duplicate Call/Directions inside the main actions on mobile */
+  /* Remove duplicate Call/Directions inside the main actions on mobile */
   .actions a.btn{
     display: none;
   }
@@ -319,6 +319,22 @@ body{
     min-height: 46px;
     padding: 10px 12px;
   }
+
+  /* ============================
+     ✅ NEW: Dock "pressed" effect
+     ============================ */
+  .mobile-dock .btn{
+    transform: translateZ(0);
+    will-change: transform, opacity;
+  }
+
+  .mobile-dock .btn:active{
+    transform: scale(0.975);
+    opacity: 0.92;
+    border-color: rgba(255,255,255,0.22);
+    background: rgba(255,255,255,0.085);
+  }
+  /* ============================ */
 }
 
 /* DEV NOTICE */

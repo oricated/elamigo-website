@@ -7,27 +7,34 @@
   <title>El Amigo Authentic Mexican Food</title>
 
   <link rel="canonical" href="https://www.elamigoauthenticmexicanfood.com/" />
-  <link rel="stylesheet" href="styles.css?v=28" />
+  <link rel="stylesheet" href="styles.css?v=29" />
 </head>
 
 <body>
   <!-- DEV NOTICE START -->
-<div class="dev-banner" role="status" aria-live="polite">
-  <div class="dev-banner__inner">
-    <span class="dev-banner__badge">Under construction</span>
-    <span class="dev-banner__text">
-      Online ordering is temporarily paused while we finish the new website.
-      Please call
-      <a class="dev-banner__link" href="tel:+12195315606">+1 (219) 531-5606</a>.
-    </span>
+  <div class="dev-banner" role="status" aria-live="polite">
+    <div class="dev-banner__inner">
+      <span class="dev-banner__badge">Under construction</span>
+      <span class="dev-banner__text">
+        Online ordering is temporarily paused while we finish the new website.
+        Please call
+        <a class="dev-banner__link" href="tel:+12195315606">+1 (219) 531-5606</a>.
+      </span>
+    </div>
   </div>
-</div>
-<!-- DEV NOTICE END -->
+  <!-- DEV NOTICE END -->
+
   <header class="wrap hero hero-photo">
     <!-- Hidden text (SEO + accessibility) -->
     <div class="sr-only">
       <h1>El Amigo Authentic Mexican Food</h1>
       <p>Order online, call, or get directions in one tap.</p>
+    </div>
+
+    <!-- HERO OVERLAY (logo + simple line) -->
+    <div class="hero-overlay">
+      <img class="hero-logo" src="elamigologo.png" alt="El Amigo logo" />
+      <p class="hero-sub">Authentic Mexican Food in Valparaiso</p>
     </div>
   </header>
 
@@ -44,7 +51,7 @@
         >
           Order Online
         </button>
-    
+
         <a class="btn" href="tel:+12195315606">Call</a>
         <a
           class="btn"
@@ -53,18 +60,41 @@
           rel="noopener noreferrer"
         >Directions</a>
       </div>
+
+      <!-- RATING BAR (edit numbers anytime) -->
+      <div class="rating-bar" aria-label="Google rating">
+        <span class="rating-stars" aria-hidden="true">★</span>
+        <span class="rating-score">4.6</span>
+        <span class="rating-sep" aria-hidden="true">•</span>
+        <span class="rating-count">1,248 Google reviews</span>
+        <a
+          class="rating-link"
+          href="https://www.google.com/maps?cid=14958895656403832874"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Read reviews →</a>
+      </div>
     </div>
   </nav>
 
   <main class="wrap grid">
     <section class="card">
-  <h2>Hours</h2>
-  <p class="hoursline"><strong>Monday–Sunday</strong> <span>10:00 AM – 10:00 PM</span></p>
+      <h2>Hours</h2>
 
-  <p id="open-status" class="note"></p> 
+      <!-- Live status line -->
+      <div class="status-line" id="open-status">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span class="status-text">Checking status...</span>
+      </div>
 
-  <p class="note">Lunes–Domingo</p>
-</section>
+      <!-- Today first -->
+      <p class="today-hours" id="today-hours">Today: 10:00 AM – 10:00 PM</p>
+
+      <!-- Then the schedule -->
+      <p class="hoursline"><strong>Monday–Sunday</strong> <span>10:00 AM – 10:00 PM</span></p>
+
+      <p class="note">Lunes–Domingo</p>
+    </section>
 
     <section class="card">
       <h2>Location</h2>
@@ -100,8 +130,7 @@
     <p>© <span id="y"></span> El Amigo Authentic Mexican Food</p>
   </footer>
 
-  <script src="script.js?v=12"></script>
+  <script src="script.js?v=13"></script>
   <script src="https://www.fbgcdn.com/embedder/js/ewm2.js" defer async></script>
 </body>
 </html>
-

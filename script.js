@@ -5,7 +5,6 @@ if (y) y.textContent = new Date().getFullYear();
 /**
  * Open/Closed status using restaurant local time.
  * Valparaiso, IN is typically America/Chicago (Central Time).
- * If you ever need to change it, update this string.
  */
 const RESTAURANT_TZ = "America/Chicago";
 
@@ -27,7 +26,6 @@ function getHourInTimeZone(timeZone) {
     const hourPart = parts.find(p => p.type === "hour");
     return hourPart ? parseInt(hourPart.value, 10) : new Date().getHours();
   } catch {
-    // Fallback to device local time if Intl/timeZone fails
     return new Date().getHours();
   }
 }

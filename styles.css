@@ -31,7 +31,7 @@ body{
   border:0;
 }
 
-/* HERO: photo only (no buttons inside anymore) */
+/* HERO */
 .hero{
   position: relative;
   border-bottom:1px solid var(--line);
@@ -54,49 +54,13 @@ body{
   background-position: 70% 30%;
 }
 
-/* HERO CORNER OVERLAY (desktop/tablet) */
-.hero-overlay{
-  position: absolute;
-  right: 18px;
-  bottom: 18px;
-  left: auto;
-
-  padding: 10px 12px;
-  border-radius: 14px;
-
-  background: linear-gradient(
-    to top left,
-    rgba(0, 0, 0, 0.42),
-    rgba(0, 0, 0, 0.12)
-  );
-
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
-
-  border: 1px solid rgba(255,255,255,0.06);
-  max-width: 280px;
-}
-
-.hero-logo{
-  display:block;
-  width: min(220px, 40vw);
-  height: auto;
-  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.30));
-}
-
-.hero-sub{
-  margin: 8px 0 0 0;
-  font-size: 0.9rem;
-  opacity: 0.82;
-}
-
 /* Wrapper spacing for the action bar under the hero */
 .actions-wrap{
   padding-top: 14px;
   padding-bottom: 0;
 }
 
-/* Button panel (now below hero, not over it) */
+/* Button panel (below hero) */
 .hero-actions{
   width:100%;
   background: rgba(11,11,15,0.55);
@@ -244,9 +208,7 @@ body{
   box-shadow: 0 0 0 4px rgba(239,68,68,0.14);
 }
 
-.status-text{
-  color: var(--text);
-}
+.status-text{ color: var(--text); }
 
 .today-hours{
   margin: 0 0 10px;
@@ -264,14 +226,14 @@ body{
   .grid{grid-template-columns:1fr 1fr}
 }
 
-/* Mobile: force hero background + move overlay away from sign */
+/* Mobile: keep hero consistent */
 @media (max-width: 600px){
   .hero{
     min-height: 320px;
     padding: 0;
   }
 
-  /* Bulletproof: re-assert the image on mobile (prevents black hero) */
+  /* re-assert image on mobile */
   .hero-photo{
     background-image:
       linear-gradient(
@@ -284,37 +246,6 @@ body{
     background-size: cover;
     background-position: 62% 38%;
     background-repeat: no-repeat;
-  }
-
-  /* Put logo in a safe zone (top-left) */
-  .hero-overlay{
-    top: 10px;
-    left: 10px;
-    right: auto;
-    bottom: auto;
-
-    padding: 8px 10px;
-    max-width: 200px;
-
-    border-radius: 12px;
-    background: linear-gradient(
-      to bottom right,
-      rgba(0, 0, 0, 0.28),
-      rgba(0, 0, 0, 0.06)
-    );
-    -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3px);
-    border: 1px solid rgba(255,255,255,0.05);
-  }
-
-  .hero-logo{
-    width: 150px;
-    filter: drop-shadow(0 6px 12px rgba(0,0,0,0.25));
-  }
-
-  /* Hide tagline on mobile (cleaner) */
-  .hero-sub{
-    display: none;
   }
 
   .hero-actions{
@@ -359,9 +290,7 @@ body{
   white-space: nowrap;
 }
 
-.dev-banner__text{
-  opacity: .95;
-}
+.dev-banner__text{ opacity: .95; }
 
 .dev-banner__link{
   color: inherit;

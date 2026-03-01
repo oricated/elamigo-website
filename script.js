@@ -31,7 +31,7 @@ function getHourInTimeZone(timeZone) {
 }
 
 const statusWrap = document.getElementById("open-status");
-const todayLine = document.getElementById("today-hours");
+const hoursSimple = document.getElementById("hours-simple");
 
 if (statusWrap) {
   const dot = statusWrap.querySelector(".status-dot");
@@ -43,16 +43,18 @@ if (statusWrap) {
   const hour = getHourInTimeZone(RESTAURANT_TZ);
   const isOpen = hour >= openHour && hour < closeHour;
 
-  if (todayLine) {
-    todayLine.textContent = `Today: ${formatHour12(openHour)} – ${formatHour12(closeHour)}`;
+  // Show hours only once (here)
+  if (hoursSimple) {
+    hoursSimple.textContent = `Daily: ${formatHour12(openHour)} – ${formatHour12(closeHour)}`;
   }
 
+  // Keep status alive without repeating times
   if (text && dot) {
     if (isOpen) {
-      text.textContent = `Open now — closes at ${formatHour12(closeHour)}`;
+      text.textContent = "Open now";
       dot.classList.add("open");
     } else {
-      text.textContent = `Closed — opens at ${formatHour12(openHour)}`;
+      text.textContent = "Closed now";
       dot.classList.add("closed");
     }
   }

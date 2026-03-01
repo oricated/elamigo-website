@@ -30,10 +30,11 @@ function getHourInTimeZone(timeZone) {
   }
 }
 
-const statusWrap = document.getElementById("open-status");
-const hoursSimple = document.getElementById("hours-simple");
+function updateOpenStatus() {
+  const statusWrap = document.getElementById("open-status");
+  const hoursSimple = document.getElementById("hours-simple");
+  if (!statusWrap) return;
 
-if (statusWrap) {
   const dot = statusWrap.querySelector(".status-dot");
   const text = statusWrap.querySelector(".status-text");
 
@@ -43,13 +44,12 @@ if (statusWrap) {
   const hour = getHourInTimeZone(RESTAURANT_TZ);
   const isOpen = hour >= openHour && hour < closeHour;
 
-  // Show hours only once (here)
   if (hoursSimple) {
     hoursSimple.textContent = `Daily: ${formatHour12(openHour)} – ${formatHour12(closeHour)}`;
   }
 
-  // Status line (no extra repeats besides the open time when closed)
   if (text && dot) {
+    dot.classList.remove("open", "closed"); // reset
     if (isOpen) {
       text.textContent = "Open now";
       dot.classList.add("open");
@@ -59,3 +59,7 @@ if (statusWrap) {
     }
   }
 }
+
+updateOpenStatus();
+// Optional: refresh every minute so it flips automatically at 10:00
+setInterval(updateOpenStatus, 60 * 1000);

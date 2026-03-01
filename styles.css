@@ -89,35 +89,47 @@ body{
   font-size: 0.9rem;
   opacity: 0.82;
 }
-
-/* Mobile: show full hero image (no crop) */
+/* Mobile: avoid letterboxing + keep overlay tasteful */
 @media (max-width: 600px){
   .hero{
     min-height: 320px;
     padding: 0;
-    background: #0b0b0f; /* fills any letterbox space */
   }
 
+  /* Key fix: remove the big empty space */
   .hero-photo{
-    background-size: contain;
-    background-position: center;
+    background-size: cover;
+    background-position: 62% 35%;
     background-repeat: no-repeat;
   }
 
-  /* Subtle + compact on mobile */
+  /* Make overlay small + corner-anchored */
   .hero-overlay{
     left: 10px;
     bottom: 10px;
     padding: 8px 10px;
-    max-width: 280px;
+    max-width: 220px;
+
+    border-radius: 12px;
+    background: linear-gradient(
+      to top right,
+      rgba(0, 0, 0, 0.35),
+      rgba(0, 0, 0, 0.08)
+    );
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    border: 1px solid rgba(255,255,255,0.05);
   }
 
+  /* Smaller logo so it doesn't scream */
   .hero-logo{
-    width: min(200px, 64vw);
+    width: 170px;
+    filter: drop-shadow(0 6px 12px rgba(0,0,0,0.28));
   }
 
+  /* Hide tagline on mobile (cleaner) */
   .hero-sub{
-    font-size: 0.88rem;
+    display: none;
   }
 
   .hero-actions{
@@ -125,6 +137,7 @@ body{
     padding: 10px;
   }
 }
+
 /* Wrapper spacing for the action bar under the hero */
 .actions-wrap{
   padding-top: 14px;

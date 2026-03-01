@@ -231,9 +231,3 @@ body{
 @media (max-width: 520px){
   .dev-banner__inner{flex-wrap: wrap}
 }
-.order-soon{
-  margin: 8px 0 0;
-  font-size: 13px;
-  opacity: .75;
-  text-align: center;
-}

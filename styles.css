@@ -53,6 +53,7 @@ body{
   background-repeat: no-repeat;
   background-position: 70% 30%;
 }
+
 /* HERO CORNER OVERLAY (desktop/tablet) */
 .hero-overlay{
   position: absolute;
@@ -87,54 +88,6 @@ body{
   margin: 8px 0 0 0;
   font-size: 0.9rem;
   opacity: 0.82;
-}
-/* Mobile: avoid letterboxing + keep overlay tasteful */
-@media (max-width: 600px){
-  .hero{
-    min-height: 320px;
-    padding: 0;
-  }
-
-  /* Key fix: remove the big empty space */
-  .hero-photo{
-    background-size: cover;
-    background-position: 62% 35%;
-    background-repeat: no-repeat;
-  }
-
-  /* Make overlay small + corner-anchored */
-  .hero-overlay{
-    left: 10px;
-    bottom: 10px;
-    padding: 8px 10px;
-    max-width: 220px;
-
-    border-radius: 12px;
-    background: linear-gradient(
-      to top right,
-      rgba(0, 0, 0, 0.35),
-      rgba(0, 0, 0, 0.08)
-    );
-    -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3px);
-    border: 1px solid rgba(255,255,255,0.05);
-  }
-
-  /* Smaller logo so it doesn't scream */
-  .hero-logo{
-    width: 170px;
-    filter: drop-shadow(0 6px 12px rgba(0,0,0,0.28));
-  }
-
-  /* Hide tagline on mobile (cleaner) */
-  .hero-sub{
-    display: none;
-  }
-
-  .hero-actions{
-    border-radius: 16px;
-    padding: 10px;
-  }
 }
 
 /* Wrapper spacing for the action bar under the hero */

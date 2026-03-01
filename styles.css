@@ -99,9 +99,17 @@ body{
   transition: transform 120ms ease, background-color 120ms ease, border-color 120ms ease, opacity 120ms ease;
 }
 
-.btn:hover{
-  transform: translateY(-1px);
-  border-color: rgba(255,255,255,0.18);
+/* Hover effects only on hover-capable devices */
+@media (hover: hover) and (pointer: fine){
+  .btn:hover{
+    transform: translateY(-1px);
+    border-color: rgba(255,255,255,0.18);
+  }
+
+  .btn.primary:hover{
+    transform: translateY(-1px);
+    opacity: 0.98;
+  }
 }
 
 .btn:active{
@@ -120,12 +128,12 @@ body{
   color:#1a1209;
 }
 
-.btn.primary:hover{
-  transform: translateY(-1px);
-  opacity: 0.98;
-}
-
 .btn-wide{width:100%}
+
+/* Optional: respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .btn{ transition: none; }
+}
 
 /* Rating bar */
 .rating-bar{
@@ -192,6 +200,7 @@ body{
   border-top:1px solid var(--line);
   margin-top:18px;
 }
+
 /* Live open/closed styling */
 .status-line{
   display:flex;

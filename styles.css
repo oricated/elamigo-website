@@ -95,6 +95,11 @@ body{
   cursor:pointer;
   appearance:none;
 
+  /* Better mobile taps */
+  min-height: 48px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+
   /* Micro-interactions */
   transition: transform 120ms ease, background-color 120ms ease, border-color 120ms ease, opacity 120ms ease;
 }
@@ -249,8 +254,22 @@ body{
   .grid{grid-template-columns:1fr 1fr}
 }
 
-/* Mobile: keep hero consistent */
+/* Mobile dock hidden by default */
+.mobile-dock{
+  display: none;
+}
+
+/* Mobile: keep hero consistent + add sticky dock */
 @media (max-width: 600px){
+  /* Give space for sticky dock + safe area */
+  body{
+    padding-bottom: calc(92px + env(safe-area-inset-bottom));
+  }
+
+  .wrap{
+    padding: 16px;
+  }
+
   .hero{
     min-height: 320px;
     padding: 0;
@@ -274,6 +293,26 @@ body{
   .hero-actions{
     border-radius: 16px;
     padding: 10px;
+  }
+
+  /* Sticky action dock */
+  .mobile-dock{
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    z-index: 9998;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+
+    padding: 10px;
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,0.10);
+    background: rgba(11,11,15,0.70);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
   }
 }
 

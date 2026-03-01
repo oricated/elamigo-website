@@ -20,10 +20,10 @@ function getHourInTimeZone(timeZone) {
     const parts = new Intl.DateTimeFormat("en-US", {
       timeZone,
       hour: "numeric",
-      hour12: false
+      hour12: false,
     }).formatToParts(new Date());
 
-    const hourPart = parts.find(p => p.type === "hour");
+    const hourPart = parts.find((p) => p.type === "hour");
     return hourPart ? parseInt(hourPart.value, 10) : new Date().getHours();
   } catch {
     return new Date().getHours();
@@ -48,13 +48,13 @@ if (statusWrap) {
     hoursSimple.textContent = `Daily: ${formatHour12(openHour)} – ${formatHour12(closeHour)}`;
   }
 
-  // Keep status alive without repeating times
+  // Status line (no extra repeats besides the open time when closed)
   if (text && dot) {
     if (isOpen) {
       text.textContent = "Open now";
       dot.classList.add("open");
     } else {
-      text.textContent = "Closed now";
+      text.textContent = `Closed — opens at ${formatHour12(openHour)}`;
       dot.classList.add("closed");
     }
   }

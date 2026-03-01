@@ -169,18 +169,6 @@ body{
   border-top:1px solid var(--line);
   margin-top:18px;
 }
-
-.hoursline{
-  display:flex;
-  justify-content:space-between;
-  gap:12px;
-  padding:10px 0;
-  border-bottom:1px dashed rgba(255,255,255,0.08);
-  margin:0;
-}
-.hoursline strong{color:var(--text)}
-.hoursline span{color:var(--text)}
-
 /* Live open/closed styling */
 .status-line{
   display:flex;
@@ -208,10 +196,13 @@ body{
   box-shadow: 0 0 0 4px rgba(239,68,68,0.14);
 }
 
-.status-text{ color: var(--text); }
+.status-text{
+  color: var(--text);
+}
 
-.today-hours{
-  margin: 0 0 10px;
+/* Single hours line (only place times show) */
+.hours-simple{
+  margin: 0;
   font-size: 0.92rem;
   color: rgba(246,246,251,0.85);
 }

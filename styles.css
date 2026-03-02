@@ -90,7 +90,7 @@ body{
   background:rgba(255,255,255,0.06);
   color:var(--text);
   text-decoration:none;
-  font-weight:650;
+  font-weight:600;
   width:100%;
   cursor:pointer;
   appearance:none;
@@ -155,7 +155,7 @@ body{
 }
 
 .rating-score{
-  font-weight: 750;
+  font-weight: 700;
 }
 
 .rating-sep{
